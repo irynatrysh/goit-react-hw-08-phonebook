@@ -6,13 +6,13 @@ export const Container = styled(Form)`
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  
+  border: 1px solid black;
+  border-radius: 8px;
   padding: 20px;
-  gap: 8px;
+  gap: 10px;
   width: 300px;
   margin: 0 auto;
   background: linear-gradient(to top right, #9533FF, #1976d2);
-  border-radius: 10px;
 `;
 
 export const Text = styled.p`
@@ -30,7 +30,7 @@ export const Input = styled(Field)`
   height: 30px;
   font-size: 20px;
   border-radius: 4px;
-  border: 1px solid linear-gradient(to top right, #9533FF, #575BFF);;
+  border: 1px solid linear-gradient(to top right, #9533FF, #1976d2);
   padding-left: 8px;
 `;
 
