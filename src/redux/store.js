@@ -32,6 +32,6 @@ middleware: getDefaultMiddleware =>
   devTools: process.env.NODE_ENV === 'development',
 });
 
-// Збереження для зберігання та відновлення стану
+// для зберігання та відновлення стану
 
 export const persistor = persistStore(store);
