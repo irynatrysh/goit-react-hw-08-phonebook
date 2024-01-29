@@ -15,7 +15,7 @@ export const Filter = () => {
         name="filter"
         value={useSelector(getFilter)}
         onChange={e => {
-          dispatch(changeFilter(e.target.value));
+        dispatch(changeFilter(e.target.value));
         }}
        />
     </Container>

@@ -101,7 +101,7 @@ export function ContactForm() {
             style={{ margin: '0 auto' }}
             type="submit"
             variant="contained"
-            endIcon={<AddBoxIcon />}
+            endicon={<AddBoxIcon />}
           >
             Add contact
           </Button>

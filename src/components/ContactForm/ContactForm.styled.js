@@ -6,7 +6,6 @@ export const Container = styled(Form)`
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  border: 1px solid black;
   border-radius: 8px;
   padding: 20px;
   gap: 10px;

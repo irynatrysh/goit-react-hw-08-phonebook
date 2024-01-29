@@ -97,11 +97,12 @@ export const AuthForm = () => {
           <ErrorMessage name="password">
             {() => <ErrorText>Wrong password</ErrorText>}
           </ErrorMessage>
+
           <Button
             style={{ margin: '0 auto' }}
             type="submit"
             variant="contained"
-            endIcon={<ChevronRightIcon />}
+            endicon={<ChevronRightIcon />}
           >
             {activeForm === 'login' ? 'Log in' : 'Sign up'}
           </Button>
