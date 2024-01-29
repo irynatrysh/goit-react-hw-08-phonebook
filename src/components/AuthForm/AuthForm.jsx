@@ -10,42 +10,39 @@ import Button from '@mui/material/Button';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 const initialValues = {
-    name: '',
-    email: '',
-    password: '',
+  name: '', // поле імені для форми реєстрації
+  email: '',
+  password: '',
 };
 
 let userSchema = yup.object({
-    name: yup.string(), // Add validation for name field
-    email: yup.string().email().required(),
-    password: yup.string().min(6).required(),
+  name: yup.string(), // перевірка для поля імені
+  email: yup.string().email().required(),
+  password: yup.string().min(6).required(),
 });
 
 export const AuthForm = () => {
-    const dispatch = useDispatch();
-    const [activeForm, setActiveForm] = useState('login'); // 'login' or 'signup'
+  const dispatch = useDispatch();
+  const [activeForm, setActiveForm] = useState('login'); // 'login' or 'signup'
 
-    const handleOnSubmit = (values, actions) => {
-        const item = {
-            name: values.name, // Include name field for both login and signup forms
-            email: values.email,
-            password: values.password,
-        };
+  const handleOnSubmit = (values, actions) => {
+    const item = {
+      name: values.name, // поле імені як для входу, так і для форми реєстрації
+      email: values.email,
+      password: values.password,
+    };
 
-// Dispatch the appropriate action based on the active form
+    // Dispatch the appropriate action based on the active form
     const action = activeForm === 'login' ? logIn : register;
 
     dispatch(action(item))
-      .then(() => {
-        toast.success(`${activeForm === 'login' ? 'Logged in' : 'Signed up'} successfully`);
-      })
-      .catch(error => {
-        toast.error(error.message);
+      .then(unwrapResult)
+      .catch(rejectedValueOrSerializedError => {
+        toast.error(rejectedValueOrSerializedError);
       });
 
     actions.resetForm();
   };
-
 
   return (
     <>
@@ -97,12 +94,11 @@ export const AuthForm = () => {
           <ErrorMessage name="password">
             {() => <ErrorText>Wrong password</ErrorText>}
           </ErrorMessage>
-
           <Button
             style={{ margin: '0 auto' }}
             type="submit"
             variant="contained"
-            endicon={<ChevronRightIcon />}
+            endIcon={<ChevronRightIcon />}
           >
             {activeForm === 'login' ? 'Log in' : 'Sign up'}
           </Button>

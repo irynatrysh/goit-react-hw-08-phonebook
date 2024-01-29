@@ -1,6 +1,5 @@
-import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
-import { Container, Text, Input, Button, ErrorText } from './ContactForm.styled';
+import { Container, Text, Input, ErrorText } from './ContactForm.styled';
 import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { getContacts } from '../../redux/contacts/selectors';
@@ -8,6 +7,7 @@ import { addContact } from '../../redux/contacts/operations';  // Виправл
 import { toast } from 'react-toastify';
 import { unwrapResult } from '@reduxjs/toolkit';
 import AddBoxIcon from '@mui/icons-material/AddBox';  // Видалено дубльований імпорт Button
+import Button from '@mui/material/Button';
 
 const initialValues = {
   name: '',
@@ -101,7 +101,7 @@ export function ContactForm() {
             style={{ margin: '0 auto' }}
             type="submit"
             variant="contained"
-            endicon={<AddBoxIcon />}
+            endIcon={<AddBoxIcon />}
           >
             Add contact
           </Button>
