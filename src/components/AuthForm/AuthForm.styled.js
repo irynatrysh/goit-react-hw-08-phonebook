@@ -7,13 +7,13 @@ export const Container = styled(Form)`
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  background: linear-gradient(to top right, #9533FF, #575BFF);
+  background: linear-gradient(to top right, #9533FF, #1976d2);
   color: white;
   background-color: #1976d2;
   padding: 20px;
   gap: 10px;
   width: 300px;
-  border-radius: 10px;
+  border-radius: 8px;
 `;
 
 export const Text = styled.p`

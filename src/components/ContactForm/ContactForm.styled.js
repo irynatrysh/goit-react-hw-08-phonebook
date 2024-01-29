@@ -6,20 +6,23 @@ export const Container = styled(Form)`
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  border: 1px solid black;
+  
   padding: 20px;
-  gap: 10px;
+  gap: 8px;
   width: 300px;
   margin: 0 auto;
+  background: linear-gradient(to top right, #9533FF, #1976d2);
+  border-radius: 10px;
 `;
 
 export const Text = styled.p`
   margin: 0;
+  color: white;
 `;
 
 export const ErrorText = styled.p`
   margin: 0;
-  color: green;
+  color: pink;
 `;
 
 export const Input = styled(Field)`
@@ -27,7 +30,7 @@ export const Input = styled(Field)`
   height: 30px;
   font-size: 20px;
   border-radius: 4px;
-  border: 1px solid black;
+  border: 1px solid linear-gradient(to top right, #9533FF, #575BFF);;
   padding-left: 8px;
 `;
 
@@ -38,4 +41,5 @@ export const Button = styled.button`
   border-color: black;
   font-size: 20px;
   margin: 0 auto;
+  color: #575bff;
 `;
