@@ -36,3 +36,4 @@ export const Home = () => {
     </div>
   );
 };
+
